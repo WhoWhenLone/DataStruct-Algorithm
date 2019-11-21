@@ -10,18 +10,19 @@ namespace SortDemo
             {
                 2,8,7,8,3,7,55,78
             };
-            MaoPaoSort(result);
-            PrintArray(result);
-            //Console.WriteLine("Hello World!");
+            //冒泡排序
+            //BubbleSort(result);
+            //选择排序
+            //SelectSort(result);
+
         }
         /// <summary>
         /// 冒泡排序
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="_array"></param>
-        static void MaoPaoSort<T>(T[] _array)
+        static void BubbleSort<T>(T[] _array)
         {
-            //Array.Sort(_array);
             for (int i = 0; i < _array.Length; i++)
             {
                 for (int j = i; j < _array.Length; j++)
@@ -30,14 +31,32 @@ namespace SortDemo
                     {
                         Swap(ref _array[i], ref _array[j]);
                     }
-                }
+                } 
             }
         }
 
         static void SelectSort<T>(T[] _array)
-        {
+        { 
+            for (int i = 0; i < _array.Length; i++)
+            {
+                int index = i;
+                T MIN_NUM = _array[i];
+                for (int j = i+1; j < _array.Length; j++)
+                {
+                    if (float.Parse(_array[j].ToString()) < float.Parse(MIN_NUM.ToString()))
+                    {
+                        index = j;
+                        MIN_NUM = _array[j];
+                    }
+                }
+                if (index != i)
+                {
+                    Swap(ref _array[i], ref _array[index]);
+                }
 
+            }
         }
+
         #region 工具函数
         /// <summary>
         /// 交换方法
@@ -62,7 +81,7 @@ namespace SortDemo
             {
                 Console.Write(item + "  ");
             }
-            Console.ReadKey();
+            Console.WriteLine();
         }
         #endregion
 
