@@ -34,7 +34,11 @@ namespace SortDemo
                 } 
             }
         }
-
+        /// <summary>
+        /// 选择排序
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="_array"></param>
         static void SelectSort<T>(T[] _array)
         { 
             for (int i = 0; i < _array.Length; i++)
