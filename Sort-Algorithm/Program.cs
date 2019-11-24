@@ -2,7 +2,7 @@
 
 namespace SortDemo
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
@@ -10,10 +10,18 @@ namespace SortDemo
             {
                 2,8,7,8,3,7,55,78
             };
+            Console.WriteLine("after sort");
+            PrintArray(result);
             //冒泡排序
             //BubbleSort(result);
             //选择排序
             //SelectSort(result);
+
+            InsertSort(result);
+            Console.WriteLine("before sort");
+            PrintArray(result);
+
+            
 
         }
         /// <summary>
@@ -57,7 +65,35 @@ namespace SortDemo
                 {
                     Swap(ref _array[i], ref _array[index]);
                 }
-
+            }
+        }
+        /// <summary>
+        /// 插入排序
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="_array"></param>
+        static void InsertSort<T>(T[] _array)
+        {
+            for (int i = 1; i < _array.Length; i++)
+            {
+                T current = _array[i];
+                for (int j = i-1; j >= 0; j--)
+                {
+                    if(float.Parse(current.ToString()) < float.Parse( _array[j].ToString()))
+                    {
+                        _array[j + 1] = _array[j];
+                        if (j == 0)
+                        {
+                            _array[j] = current;
+                            break;
+                        }   
+                    }
+                    else
+                    {
+                        _array[j + 1] = current;
+                        break;
+                    }
+                }
             }
         }
 
