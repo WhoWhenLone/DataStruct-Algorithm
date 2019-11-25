@@ -16,13 +16,12 @@ namespace SortDemo
             //BubbleSort(result);
             //选择排序
             //SelectSort(result);
-
-            InsertSort(result);
+            //插入排序
+            //InsertSort(result);
+            //快速排序
+            //QuickSort(result,0,result.Length-1);
             Console.WriteLine("before sort");
             PrintArray(result);
-
-            
-
         }
         /// <summary>
         /// 冒泡排序
@@ -48,7 +47,7 @@ namespace SortDemo
         /// <typeparam name="T"></typeparam>
         /// <param name="_array"></param>
         static void SelectSort<T>(T[] _array)
-        { 
+        {                
             for (int i = 0; i < _array.Length; i++)
             {
                 int index = i;
@@ -95,6 +94,54 @@ namespace SortDemo
                     }
                 }
             }
+        }
+        /// <summary>
+        /// 快速排序
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="_array"></param>
+        static void QuickSort<T>(T[] _array,int left,int right)
+        {
+            if(left < right)
+            {
+                T middle = _array[left];
+                int i = left, j = right;
+                while (i < j)
+                {
+                    while(i<j)
+                    {
+                        //从后向前找到比标杆小的值 交换
+                        if(float.Parse(middle.ToString()) >= float.Parse(_array[j].ToString()))
+                        {
+                            _array[i] = _array[j];
+                            break;
+                        }
+                        //前移 
+                        else
+                        {
+                            j--;
+                        }
+                    }
+                    while (i < j)
+                    {
+                        //从前向后找到比标杆大的值 交换
+                        if (float.Parse(middle.ToString()) < float.Parse(_array[i].ToString()))
+                        {
+                            _array[j] = _array[i];
+                            break;
+                        }
+                        //后移
+                        else
+                        {
+                            i++;
+                        }
+                    }
+                }
+                _array[i] = middle;
+                QuickSort(_array, left, i - 1);
+                QuickSort(_array, i+1, right);
+            }
+            
         }
 
         #region 工具函数
