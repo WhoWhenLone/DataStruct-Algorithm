@@ -6,21 +6,21 @@
 
 #### 示例 1：
 
-![img](/image/141/1.jpg)
+![image](https://github.com/WhoWhenLone/DataStruct-Algorithm/blob/master/LeetCode/image/141/1.jpg)
 
 输入：head = [3,2,0,-4], pos = 1
 输出：true 解释：链表中有一个环，其尾部连接到第二个节点。
 
 #### 示例 2：
 
-![img](/image/141/2.jpg)
+![image](https://github.com/WhoWhenLone/DataStruct-Algorithm/blob/master/LeetCode/image/141/2.jpg)
 
 输入：head = [1,2], pos = 0 输出：true 
 解释：链表中有一个环，其尾部连接到第一个节点。
 
 #### 示例 3：
 
-![img](/image/141/3.jpg)
+![image](https://github.com/WhoWhenLone/DataStruct-Algorithm/blob/master/LeetCode/image/141/3.jpg)
 
 输入：head = [1], pos = -1 输出：false 解释：链表中没有环。
 
